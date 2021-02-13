@@ -4,6 +4,33 @@
     padding: 0;
 }
 
+@media only screen and (max-width: 500px) {
+    body {
+        font-size: 16px;
+    }
+    nav {
+        ul {
+            float: none;
+            width: 100%;
+            li {
+                text-transform: uppercase;
+            }
+        }
+    }
+    header {
+        margin-bottom: 2rem;
+        .search_field {
+            width: 100%;
+        }
+        .buttons {
+            display: none;
+        }
+        p {
+            width: 90%;
+        }
+    }
+}
+
 @media only screen and (max-width: 850px) {
     .bottom {
         flex-direction: column;
@@ -61,7 +88,7 @@ header {
     justify-content: center;
     margin: 0 auto;
     img {
-        width: 270px;
+        width: 20rem;
     }
     .search_field {
         margin-top: 25px;

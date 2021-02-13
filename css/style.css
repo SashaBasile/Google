@@ -5,6 +5,31 @@
   padding: 0;
 }
 
+@media only screen and (max-width: 500px) {
+  body {
+    font-size: 16px;
+  }
+  nav ul {
+    float: none;
+    width: 100%;
+  }
+  nav ul li {
+    text-transform: uppercase;
+  }
+  header {
+    margin-bottom: 2rem;
+  }
+  header .search_field {
+    width: 100%;
+  }
+  header .buttons {
+    display: none;
+  }
+  header p {
+    width: 90%;
+  }
+}
+
 @media only screen and (max-width: 850px) {
   .bottom {
     -webkit-box-orient: vertical;
@@ -92,7 +117,7 @@ header {
 }
 
 header img {
-  width: 270px;
+  width: 20rem;
 }
 
 header .search_field {
