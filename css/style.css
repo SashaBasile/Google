@@ -6,28 +6,30 @@
 }
 
 @media only screen and (max-width: 500px) {
-  body {
-    font-size: 16px;
-  }
   nav ul {
     float: none;
-    width: 100%;
-  }
-  nav ul li {
-    text-transform: uppercase;
   }
   header {
-    margin-bottom: 2rem;
+    padding-top: 30px;
+    max-width: 80%;
   }
-  header .search_field {
-    width: 100%;
+  header img {
+    width: 100px;
+  }
+  header .search_field .microphone_icon {
+    display: none;
   }
   header .buttons {
     display: none;
   }
   header p {
-    width: 70%;
     text-align: center;
+  }
+  header p a {
+    display: block;
+  }
+  header p a::before {
+    content: attr(data-text);
   }
 }
 
@@ -131,7 +133,8 @@ header .search_field {
   cursor: pointer;
 }
 
-header .search_field .icons {
+header .search_field .search_icon,
+header .search_field .microphone_icon {
   width: 16px;
   margin-right: 5px;
   margin-left: 10px;
