@@ -11,7 +11,7 @@
   }
   header {
     padding-top: 30px;
-    max-width: 80%;
+    max-width: 70%;
   }
   header img {
     width: 100px;
@@ -46,8 +46,8 @@
 }
 
 body {
-  font-size: 13px;
   font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
 }
 
 nav {
@@ -84,9 +84,9 @@ nav ul li a {
   color: #ffffff;
   padding: 10px 27px;
   border-radius: 7%;
+  text-decoration: none;
   font-family: "Roboto", sans-serif;
   font-size: 15px;
-  text-decoration: none;
 }
 
 nav ul li a:hover {
@@ -109,8 +109,6 @@ header {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
   -ms-flex-flow: row wrap;
       flex-flow: row wrap;
   -webkit-box-pack: center;
@@ -124,13 +122,18 @@ header img {
 }
 
 header .search_field {
-  margin-top: 25px;
-  padding: 12px;
   border: solid 0.01px #0000001b;
   border-radius: 30px;
+  margin-top: 25px;
+  padding: 12px;
   width: 45em;
   height: 45px;
   cursor: pointer;
+}
+
+header .search_field:hover {
+  -webkit-box-shadow: 1px 1px 8px #dad6d6;
+          box-shadow: 1px 1px 8px #dad6d6;
 }
 
 header .search_field .search_icon,
@@ -140,20 +143,11 @@ header .search_field .microphone_icon {
   margin-left: 10px;
 }
 
-header .search_field .icons:hover {
-  width: 17px;
-}
-
 header .search_field input {
-  width: 85%;
   border: none;
   height: 150%;
   outline: none;
-}
-
-header .search_field:hover {
-  -webkit-box-shadow: 1px 1px 8px #dad6d6;
-          box-shadow: 1px 1px 8px #dad6d6;
+  width: 85%;
 }
 
 header .buttons {
@@ -200,9 +194,9 @@ footer {
 
 footer .country {
   border-bottom: solid #0000001a 0.001cm;
-  padding: 15px 20px;
   font-size: 15px;
   margin-left: 5px;
+  padding: 15px 20px;
 }
 
 footer .bottom {

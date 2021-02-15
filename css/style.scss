@@ -4,6 +4,12 @@
     padding: 0;
 }
 
+@mixin menu {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+}
+
 @media only screen and (max-width: 500px) {
     nav {
         ul {
@@ -12,7 +18,7 @@
     }
     header {
         padding-top: 30px;
-        max-width: 80%;
+        max-width: 70%;
         img {
             width: 100px;
         }
@@ -44,16 +50,16 @@
 }
 
 body {
-    font-size: 13px;
-    font-family: Arial, Helvetica, sans-serif;
+    font: {
+        family: Arial, Helvetica, sans-serif;
+        size: 13px;
+    }
 }
 
 nav {
     height: 10vh;
     ul {
-        display: flex;
-        flex-direction: row;
-        list-style: none;
+        @include menu;
         float: right;
         align-items: stretch;
         margin-top: 7px;
@@ -68,14 +74,16 @@ nav {
                 color: #ffffff;
                 padding: 10px 27px;
                 border-radius: 7%;
-                font-family: "Roboto", sans-serif;
-                font-size: 15px;
                 text-decoration: none;
-            }
-            a:hover {
-                background-color: #267ced;
-                box-shadow: 1px 1px 5px #267ced;
-                text-decoration: none;
+                font: {
+                    family: "Roboto", sans-serif;
+                    size: 15px;
+                }
+                &:hover {
+                    background-color: #267ced;
+                    box-shadow: 1px 1px 5px #267ced;
+                    text-decoration: none;
+                }
             }
         }
         .text:hover {
@@ -87,40 +95,40 @@ nav {
 header {
     max-width: 600px;
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-flow: row wrap;
+    flex: {
+        direction: column;
+        flow: row wrap;
+    }
     justify-content: center;
     margin: 0 auto;
     img {
         width: 20rem;
     }
     .search_field {
-        margin-top: 25px;
-        padding: 12px;
         border: solid 0.01px #0000001b;
         border-radius: 30px;
+        margin-top: 25px;
+        padding: 12px;
         width: 45em;
         height: 45px;
         cursor: pointer;
+        &:hover {
+            box-shadow: 1px 1px 8px #dad6d6;
+        }
         .search_icon,
         .microphone_icon {
             width: 16px;
-            margin-right: 5px;
-            margin-left: 10px;
-        }
-        .icons:hover {
-            width: 17px;
+            margin: {
+                right: 5px;
+                left: 10px;
+            }
         }
         input {
-            width: 85%;
             border: none;
             height: 150%;
             outline: none;
+            width: 85%;
         }
-    }
-    .search_field:hover {
-        box-shadow: 1px 1px 8px #dad6d6;
     }
     .buttons {
         margin-top: 50px;
@@ -144,9 +152,9 @@ header {
         a {
             color: #1a0dab;
             text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
+            &:hover {
+                text-decoration: underline;
+            }
         }
     }
 }
@@ -160,9 +168,9 @@ footer {
     font-size: 14px;
     .country {
         border-bottom: solid #0000001a 0.001cm;
-        padding: 15px 20px;
         font-size: 15px;
         margin-left: 5px;
+        padding: 15px 20px;
     }
     .bottom {
         display: flex;
@@ -170,16 +178,14 @@ footer {
         justify-content: space-between;
         padding: 0 20px;
         ul {
-            display: flex;
-            flex-direction: row;
-            list-style: none;
+            @include menu;
             margin: 5px 0;
             li {
                 padding: 15px;
                 cursor: pointer;
-            }
-            li:hover {
-                text-decoration: underline;
+                &:hover {
+                    text-decoration: underline;
+                }
             }
         }
     }
