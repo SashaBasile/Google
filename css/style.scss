@@ -29,6 +29,9 @@ body {
         family: Arial, Helvetica, sans-serif;
         size: 13px;
     }
+    @include mobile {
+        font-size: 16px;
+    }
 }
 
 nav {
