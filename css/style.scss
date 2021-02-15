@@ -4,49 +4,24 @@
     padding: 0;
 }
 
+$tablet: 850px;
+$mobile: 500px;
+@mixin tablet {
+    @media (max-width: #{tablet}) {
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media (max-width: #{mobile}) {
+        @content;
+    }
+}
+
 @mixin menu {
     display: flex;
     flex-direction: row;
     list-style: none;
-}
-
-@media only screen and (max-width: 500px) {
-    nav {
-        ul {
-            float: none;
-        }
-    }
-    header {
-        padding-top: 30px;
-        max-width: 70%;
-        img {
-            width: 100px;
-        }
-        .search_field {
-            .microphone_icon {
-                display: none;
-            }
-        }
-        .buttons {
-            display: none;
-        }
-        p {
-            text-align: center;
-            a {
-                display: block;
-                &::before {
-                    content: attr(data-text);
-                }
-            }
-        }
-    }
-}
-
-@media only screen and (max-width: 850px) {
-    .bottom {
-        flex-direction: column;
-        align-items: center;
-    }
 }
 
 body {
@@ -63,6 +38,9 @@ nav {
         float: right;
         align-items: stretch;
         margin-top: 7px;
+        @include mobile {
+            float: none;
+        }
         li {
             margin: 10px;
             cursor: pointer;
@@ -101,8 +79,15 @@ header {
     }
     justify-content: center;
     margin: 0 auto;
+    @include mobile {
+        padding-top: 30px;
+        max-width: 70%;
+    }
     img {
         width: 20rem;
+        @include mobile {
+            width: 100px;
+        }
     }
     .search_field {
         border: solid 0.01px #0000001b;
@@ -123,6 +108,11 @@ header {
                 left: 10px;
             }
         }
+        .microphone_icon {
+            @include mobile {
+                display: none;
+            }
+        }
         input {
             border: none;
             height: 150%;
@@ -132,6 +122,9 @@ header {
     }
     .buttons {
         margin-top: 50px;
+        @include mobile {
+            display: none;
+        }
         a {
             background-color: #f8f9fa;
             border: 1px solid #f8f9fa;
@@ -149,11 +142,20 @@ header {
     }
     p {
         margin-top: 50px;
+        @include mobile {
+            text-align: center;
+        }
         a {
             color: #1a0dab;
             text-decoration: none;
             &:hover {
                 text-decoration: underline;
+            }
+            @include mobile {
+                display: block;
+                &::before {
+                    content: attr(data-text);
+                }
             }
         }
     }
@@ -177,6 +179,10 @@ footer {
         flex-wrap: wrap;
         justify-content: space-between;
         padding: 0 20px;
+        @include tablet {
+            flex-direction: column;
+            align-items: center;
+        }
         ul {
             @include menu;
             margin: 5px 0;
