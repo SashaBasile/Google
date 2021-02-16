@@ -1,13 +1,13 @@
 $tablet: 850px;
 $mobile: 500px;
 @mixin tablet {
-    @media (max-width: #{tablet}) {
+    @media (max-width: #{$tablet}) {
         @content;
     }
 }
 
 @mixin mobile {
-    @media (max-width: #{mobile}) {
+    @media (max-width: #{$mobile}) {
         @content;
     }
 }
@@ -43,6 +43,7 @@ nav {
         margin-top: 7px;
         @include mobile {
             float: none;
+            margin-left: 20px;
         }
         li {
             margin: 10px;
@@ -89,7 +90,7 @@ header {
     img {
         width: 20rem;
         @include mobile {
-            width: 100px;
+            width: 10rem;
         }
     }
     .search_field {
@@ -110,6 +111,11 @@ header {
                 right: 5px;
                 left: 10px;
             }
+            @include mobile {
+                width: 12px;
+                margin-left: 5px;
+                margin-bottom: 5px;
+            }
         }
         .microphone_icon {
             @include mobile {
@@ -122,6 +128,13 @@ header {
             outline: none;
             width: 85%;
             font-size: 16px;
+        }
+        @include mobile {
+            width: 200em;
+            height: 35px;
+            input {
+                height: 10px;
+            }
         }
     }
     .buttons {
@@ -148,6 +161,8 @@ header {
         margin-top: 50px;
         @include mobile {
             text-align: center;
+            font-size: 10px;
+            line-height: 14px;
         }
         a {
             color: #1a0dab;
@@ -195,6 +210,17 @@ footer {
                 cursor: pointer;
                 &:hover {
                     text-decoration: underline;
+                }
+            }
+        }
+    }
+    @include mobile {
+        font-size: 12px;
+        .bottom {
+            ul {
+                margin: 0px 0px;
+                li {
+                    padding: 10px;
                 }
             }
         }
